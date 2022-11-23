@@ -1,0 +1,22 @@
+1. Muestra todos los vendedores que tengan comision mayor a 3
+SELECT * FROM VENDEDORES WHERE comision > 3.0;
+2. Muestra nombre y apellidos de los clientes cuyo vendedor
+tiene id 4.
+SELECT nombre, apellidos FROM clientes WHERE vendedor_id = 4;
+3. Muestra el numero total de clientes.
+SELECT COUNT(id) FROM clientes; 
+4. Muestra el numero de clientes que tienen fecha '2022-11-22'.
+SELECT COUNT(*) FROM clientes WHERE fecha='2022-11-22';
+5. Muestra el numero total de grupos situados en la ciudad
+de Madrid.
+SELECT COUNT(*) FROM grupos WHERE ciudad = "Madrid"
+SELECT COUNT(*) FROM grupos WHERE ciudad IN ("Madrid")
+6. Muestra el stock total de coches en el concesionario.
+Debe mostrarse con alias "total".
+SELECT SUM(stock) AS total FROM coches;
+7. Muestra los modelos de coches de la marca Renault que tienen 
+un precio entre 20000,50 y 32050,40
+SELECT modelo FROM coches WHERE marca = "Renault" AND
+precio BETWEEN 20000.50 AND 32050.40
+8. Muestra un total de 2 coches que tiene stock superior a 10
+SELECT * FROM coches WHERE stock > 10 LIMIT 2;
